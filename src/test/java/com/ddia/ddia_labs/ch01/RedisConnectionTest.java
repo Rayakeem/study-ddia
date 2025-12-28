@@ -33,4 +33,20 @@ class RedisConnectionTest {
         assertThat(result).isEqualTo(value);
 
     }
+
+    @Test
+    @DisplayName("user 객체를 reids에 json으로 저장하고 불러오기")
+    void saveUserObject() {
+        //given
+        User user = new User("sohee", "CTO");
+        String key = "user:100";
+
+        //when
+        redisTemplate.opsForValue().set(key, user);
+
+        //then
+
+
+    }
+
 }
